@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="ok">同意许可协议</input>
+        <!-- v:if条件指令（惰性）：还有v-else、v-else-if切换开销大 -->
+        <h1 v-if="ok">if:Lorem ipsum dolor sit amet.</h1>
+        <h1 v-else>no</h1>
+
+        <!-- v:show条件指令：初始渲染开销大 (切换频繁用v-show)-->
+        <h1 v-show="ok">show:Lorem ipsum dolor sit amet.</h1>
+        <h1 v-show="!ok">no</h1>
+    </div>
+    <script src="/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                ok:false
+            }
+        })
+    </script>
+</body>
+
+</html>

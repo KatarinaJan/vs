@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- import css -->
+    <link rel="stylesheet" href="/element-ui/lib/theme-chalk/index.css" />
+    <!-- import Vue before Element -->
+    <script src="/vue.min.js"></script>
+    <!-- import JavaScript -->
+    <script src="/element-ui/lib/index.js"></script>    
+</head>
+
+<body>
+    <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="Hello world">
+            <p>Try Element</p>
+        </el-dialog>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: function () { // 定义Vue中data的另一种方式
+                return {
+                    visible: false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

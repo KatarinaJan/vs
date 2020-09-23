@@ -1,0 +1,21 @@
+<script>
+    // 1、多行字符串 原样输出换行
+    let string1 = `Hey,
+    Can you stop angry now?`
+    console.log(string1)
+
+    // 2、字符串插入变量和表达式
+    // 变量名写在${}中，${}中可以放入JavaScript表达式中
+    let name = "Mike"
+    let age = 27
+    let info = `My name is ${name}, I am ${age+1} years old next year.`
+    console.log(info)
+
+    // 3、字符串中调用函数
+    function f() {
+        return "Have fun!"
+    }
+    let string2 = `Game start,${f()}`
+    console.log(string2)
+
+</script>

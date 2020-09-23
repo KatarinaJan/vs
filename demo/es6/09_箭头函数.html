@@ -1,0 +1,26 @@
+<script>
+    // 传统
+    var f1 = function(a) {
+        return a
+    }
+    console.log(f1(1))
+
+    // ES6
+    var f2 = a => a
+    console.log(f2(2))
+
+    // 当箭头函数函数体有多行语句，用 {} 包裹起来，表示代码块，
+    var f3 = (a, b) => {
+        let result = a + b
+        return result
+    }
+    console.log(f3(1,2))
+
+    // 当只有一行语句，并且需要返回结果时，可以省略 {} , 结果会自动返回。   
+    var f4 = (a,b) => a + b
+    console.log(f4(2,3))
+
+    // 当箭头函数没有参数或者有多个参数，要用 () 括起来。
+    var f5 = () => console.log(f4(4,5))
+    this.f5()
+</script>
