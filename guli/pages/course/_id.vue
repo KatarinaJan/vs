@@ -11,7 +11,7 @@
       </section>
       <div>
         <article class="c-v-pic-wrap" style="height: 357px;">
-          <section class="p-h-video-box" id="videoPlay">
+          <section id="videoPlay" class="p-h-video-box">
             <img src="~/assets/photo/course/1442295581911.jpg" alt="Java精品课程" class="dis c-v-pic">
           </section>
         </article>
@@ -29,7 +29,7 @@
             </section>
             <section class="c-attr-mt of">
               <span class="ml10 vam">
-                <em class="icon18 scIcon"></em>
+                <em class="icon18 scIcon"/>
                 <a class="c-fff vam" title="收藏" href="#" >收藏</a>
               </span>
             </section>
@@ -66,7 +66,7 @@
             </li>
           </ol>
         </aside>
-        <div class="clear"></div>
+        <div class="clear"/>
       </div>
       <!-- /课程封面介绍 -->
       <div class="mt20 c-infor-box">
@@ -110,7 +110,7 @@
                           <!-- 文件目录 -->
                           <li class="lh-menu-stair">
                             <a href="javascript: void(0)" title="第一章" class="current-1">
-                              <em class="lh-menu-i-1 icon18 mr10"></em>第一章
+                              <em class="lh-menu-i-1 icon18 mr10"/>第一章
                             </a>
                             <ol class="lh-menu-ol" style="display: block;">
                               <li class="lh-menu-second ml30">
@@ -164,7 +164,7 @@
             </div>
           </div>
         </aside>
-        <div class="clear"></div>
+        <div class="clear"/>
       </div>
     </section>
     <!-- /课程详情 结束 -->

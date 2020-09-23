@@ -171,7 +171,7 @@
                 </section>
               </li>
             </ul>
-            <div class="clear"></div>
+            <div class="clear"/>
           </article>
         </div>
         <!-- 公共分页 开始 -->
@@ -184,7 +184,7 @@
             <a href="#" title="第2页">2</a>
             <a href="#" title="后一页">&gt;</a>
             <a href="#" title="末页">末</a>
-            <div class="clear"></div>
+            <div class="clear"/>
           </div>
         </div>
         <!-- 公共分页 结束 -->
@@ -194,5 +194,5 @@
   </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>

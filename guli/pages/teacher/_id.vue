@@ -25,10 +25,10 @@
                 class="mt20"
               >北京师范大学法学院副教授、清华大学法学博士。自2004年至今已有9年的司法考试培训经验。长期从事司法考试辅导，深知命题规律，了解解题技巧。内容把握准确，授课重点明确，层次分明，调理清晰，将法条法理与案例有机融合，强调综合，深入浅出。</p>
             </section>
-            <div class="clear"></div>
+            <div class="clear"/>
           </div>
         </section>
-        <div class="clear"></div>
+        <div class="clear"/>
       </div>
       <section class="mt30">
         <div>
@@ -101,7 +101,7 @@
                 </div>
               </li>
             </ul>
-            <div class="clear"></div>
+            <div class="clear"/>
           </article>
         </div>
       </section>
@@ -110,5 +110,5 @@
   </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>

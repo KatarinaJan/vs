@@ -41,7 +41,7 @@
           </dl>
           <dl>
             <dt>
-              <span class="c-999 fsize14"></span>
+              <span class="c-999 fsize14"/>
             </dt>
             <dd class="c-s-dl-li">
               <ul class="clearfix">
@@ -57,7 +57,7 @@
               </ul>
             </dd>
           </dl>
-          <div class="clear"></div>
+          <div class="clear"/>
         </section>
         <div class="js-wrap">
           <section class="fr">
@@ -90,7 +90,7 @@
           </section>
           <!-- /无数据提示 结束-->
           <article class="comm-course-list">
-            <ul class="of" id="bna">
+            <ul id="bna" class="of">
               <li>
                 <div class="cc-l-wrap">
                   <section class="course-img">
@@ -292,7 +292,7 @@
                 </div>
               </li>
             </ul>
-            <div class="clear"></div>
+            <div class="clear"/>
           </article>
         </div>
         <!-- 公共分页 开始 -->
@@ -304,7 +304,7 @@
             <a href="#" title>2</a>
             <a id="nextpage" href="#" title>&gt;</a>
             <a href="#" title>末</a>
-            <div class="clear"></div>
+            <div class="clear"/>
           </div>
         </div>
         <!-- 公共分页 结束 -->
@@ -314,5 +314,5 @@
   </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>
