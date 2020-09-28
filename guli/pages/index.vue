@@ -47,7 +47,7 @@
                       <span v-if="Number(course.price) === 0" class="fr jgTag bg-green">
                         <i class="c-fff fsize12 f-fA">免费</i>
                       </span>
-                      <span class="fr jgTag bg-green">
+                      <span v-else class="fr jgTag bg-green">
                         <i class="c-fff fsize12 f-fA">￥{{ course.price }}</i>
                       </span>
                       <span class="fl jgAttr c-ccc f-fA">
