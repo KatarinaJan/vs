@@ -20,4 +20,10 @@ export default {
       method: 'get'
     })
   }
+  // getCourseInfo(courseId) {
+  //   return request({
+  //     url: `/eduservice/course/front/getCourseInfo/${courseId}`,
+  //     method: 'get'
+  //   })
+  // }
 }

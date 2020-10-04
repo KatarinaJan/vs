@@ -14,7 +14,7 @@
       <div>
         <article class="c-v-pic-wrap" style="height: 357px;">
           <section id="videoPlay" class="p-h-video-box">
-            <img :src="courseWebVo.cover" :alt="courseWebVo.title" class="dis c-v-pic">
+            <img :src="courseWebVo.cover" :alt="courseWebVo.title" width="640px" height="357px" class="dis c-v-pic">
           </section>
         </article>
         <aside class="c-attr-wrap">
@@ -35,13 +35,16 @@
                 <a class="c-fff vam" title="收藏" href="#" >收藏</a>
               </span>
             </section>
-            <section class="c-attr-mt">
-              <a href="#" title="立即观看" class="comm-btn c-btn-3">立即观看</a>
+            <section v-if="isbuy || Number(courseWebVo.price)===0" class="c-attr-mt">
+              <a href="#" title="立即观看" class="comm-btn c-btn-3" >立即观看</a>
+            </section>
+            <section v-else class="c-attr-mt">
+              <a href="#" title="立即购买" class="comm-btn c-btn-3" @click="createOrder()">立即购买</a>
             </section>
           </section>
         </aside>
         <aside class="thr-attr-box">
-          <ol class="thr-attr-ol clearfix">
+          <ol class="thr-attr-ol">
             <li>
               <p>&nbsp;</p>
               <aside>
@@ -247,17 +250,24 @@
 <script>
 import course from '@/api/course'
 import comment from '@/api/comments'
+import order from '@/api/order'
 
 export default {
+  // asyncData({ params, error }) {
+  //   // 这里params.id相当于this.$route.params.id
+  //   return course.selectWebInfoById(params.id).then(response => {
+  //     return {
+  //       courseWebVo: response.data.data.courseWebVo,
+  //       chapterVoList: response.data.data.chapterVoList,
+  //       courseId: params.id,
+  //       isbuy: response.data.data.isbuy
+  //     }
+  //   })
+  // },
   asyncData({ params, error }) {
-    // 这里params.id相当于this.$route.params.id
-    return course.selectWebInfoById(params.id).then(response => {
-      return {
-        courseWebVo: response.data.data.courseWebVo,
-        chapterVoList: response.data.data.chapterVoList,
-        courseId: params.id
-      }
-    })
+    return {
+      courseId: params.id
+    }
   },
   data() {
     return {
@@ -270,9 +280,9 @@ export default {
         courseId: '',
         teacherId: ''
       },
-      courseInfo: {},
-      chapterVideoList: [],
-      isbuyCourse: false
+      courseWebVo: {},
+      chapterVoList: [],
+      isbuy: false
     }
   },
   created() {
@@ -283,9 +293,9 @@ export default {
     // 获取课程详情
     initCourseInfo() {
       course.selectWebInfoById(this.courseId).then(response => {
-        this.courseInfo = response.data.data.courseWebVo
-        this.chapterVideoList = response.data.data.chapterVoList
-        // this.isbuyCourse = response.data.data.isbuyCourse
+        this.courseWebVo = response.data.data.courseWebVo
+        this.chapterVoList = response.data.data.chapterVoList
+        this.isbuy = response.data.data.isbuy
       })
     },
     initComment() {
@@ -295,7 +305,7 @@ export default {
     },
     addComment() {
       this.comment.courseId = this.courseId
-      this.comment.teacherId = this.courseInfo.teacherId
+      this.comment.teacherId = this.courseWebVo.teacherId
       comment.addComment(this.comment).then(response => {
         if (response.data.success) {
           this.comment.content = ''
@@ -306,6 +316,14 @@ export default {
     goPage(page) {
       comment.getPageList(page, this.limit, this.courseId).then(response => {
         this.data = response.data.data
+      })
+    },
+    createOrder() {
+      order.createOrder(this.courseId).then(response => {
+        if (response.data.success) {
+          // 订单创建成功，跳转到订单页面
+          this.$router.push({ path: '/order/' + response.data.data.orderNo })
+        }
       })
     }
   }
